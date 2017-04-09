@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "dev": "webpack-dev-server --progress --colors --inline",
+    "dev": "webpack-dev-server --progress --colors --inline --watch-poll",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Jordan Ivanov",
