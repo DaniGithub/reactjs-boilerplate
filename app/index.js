@@ -6,7 +6,7 @@ export default class MainLayout extends React.Component {
   render() {
     return (
      <div style={{textAlign: 'center'}}>
-        <h1>Hello ReactJS *paran* </h1>
+        <h1>Hello React Monkeys</h1>
         <p>Its working.</p>
       </div>);
   }

@@ -1,19 +1,17 @@
 {
-  "name": "smacktalk",
+  "name": "my-project",
   "version": "0.0.1",
-  "description": "A fun little project full on offensive content",
-  "main": "index.js",
+  "description": "my project description",
+  "main": "",
   "scripts": {
-    "build": "webpack",
-    "dev": "webpack-dev-server --progress --colors --inline --watch-poll",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack-dev-server --progress --colors --hot",
+    "build": "webpack --config webpack.production.config"
   },
-  "author": "Jordan Ivanov",
+  "author": "No Name",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.24.1",
     "css-loader": "^0.28.0",
-    "extract-text-webpack-plugin": "^2.1.0",
     "node-sass": "^4.5.2",
     "path": "^0.12.7",
     "sass-loader": "^6.0.3",

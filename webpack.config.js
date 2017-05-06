@@ -1,21 +1,19 @@
-var webpack = require('webpack');
-var path = require('path');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-
-var BUILD_DIR = path.resolve(__dirname, 'dist');
-var APP_DIR = path.resolve(__dirname, 'app');
+let webpack = require('webpack'),
+    path = require('path'),
+    BUILD_DIR = path.resolve(__dirname, 'public'),
+    APP_DIR = path.resolve(__dirname, 'app');
 
 var config = {
-  entry: [APP_DIR + '/index.jsx', APP_DIR + '/scss/main.scss'],
+  entry: [APP_DIR + '/index.js'],
+  devtool: 'source-map',
   output: {
     path: BUILD_DIR,
-    filename: 'bunduru.js',
+    filename: 'bundle.js',
     publicPath: '/'
   },
   devServer: {
-    contentBase: 'dist'
+    contentBase: 'public'
   },
-  devtool: 'source-map',
   module: {
     loaders: [
       {
@@ -26,15 +24,10 @@ var config = {
       {
         test: /\.scss$/,
         include: APP_DIR,
-        loader: ExtractTextPlugin.extract(
-          'css-loader?sourceMap!sass-loader?sourceMap'
-        )
+        loader: 'style-loader!css-loader?sourceMap!sass-loader?sourceMap'
       }      
     ]
-  },
-  plugins: [
-    new ExtractTextPlugin('css/main.css')
-  ]
+  }
 };
 
 module.exports = config;
